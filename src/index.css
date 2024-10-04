@@ -20,3 +20,8 @@
 * {
     font-family: "LabilGrotesk", sans-serif;
 }
+
+::selection {
+    background: #C4C4C480;
+    color: #000000;
+}
