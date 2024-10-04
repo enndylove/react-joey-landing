@@ -1,0 +1,75 @@
+@use "_colors.scss";
+
+.welcome {
+  &__content {
+    &-title {
+      font-size: 14.1875em;
+      font-weight: 500;
+      line-height: 90%;
+      letter-spacing: -2px;
+      color: colors.$black;
+    }
+
+    &-btn {
+      max-width: max-content;
+
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -1px;
+
+      border-radius: 144px;
+      color: colors.$black;
+      background-color: colors.$grey-50;
+
+      padding: 32px;
+      text-transform: uppercase;
+
+      transition: 0.5s;
+
+      &-icon {
+        width: 13px;
+        height: auto;
+        object-fit: cover;
+        filter: brightness(0);
+        margin-left: 7px;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        background-color: colors.$black;
+        color: colors.$grey-50;
+      }
+
+      &:hover &-icon {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  &__about {
+    margin-top: 66px;
+
+    &-title {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -1px;
+      color: colors.$black;
+    }
+
+    &-email {
+      margin-top: 9px;
+    }
+
+    &-description {
+      max-width: 420px;
+    }
+
+    &-email, &-description {
+      font-family: sans-serif !important;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: -1px;
+    }
+  }
+}
