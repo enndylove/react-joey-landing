@@ -9,12 +9,43 @@
     font-style: normal;
 }
 
-.html {
+html {
     font-size: 16px;
 }
 
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1035px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    html {
+        font-size: 5px;
+    }
+}
+
 .wrapper {
-    max-width: 1220px;
+    max-width: 1240px;
+    padding: 0 20px;
 }
 
 * {

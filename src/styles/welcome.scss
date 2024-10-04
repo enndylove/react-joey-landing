@@ -2,12 +2,25 @@
 
 .welcome {
   &__content {
+    @media (max-width: 645px) {
+      display: flex;
+      justify-content: center;
+    }
+
     &-title {
       font-size: 14.1875em;
       font-weight: 500;
       line-height: 90%;
       letter-spacing: -2px;
       color: colors.$black;
+
+      @media (max-width: 440px) {
+        max-width: 300px;
+        text-align: center;
+        font-size: 48px;
+        text-wrap: wrap;
+        padding-bottom: 72px;
+      }
     }
 
     &-btn {
@@ -26,6 +39,11 @@
 
       transition: 0.5s;
 
+      @media (max-width: 750px) {
+        padding: 16px;
+        font-size: 14px;
+      }
+
       &-icon {
         width: 13px;
         height: auto;
@@ -33,6 +51,10 @@
         filter: brightness(0);
         margin-left: 7px;
         transition: 0.5s;
+
+        @media (max-width: 750px) {
+          width: 12px;
+        }
       }
 
       &:hover {
@@ -50,10 +72,15 @@
     margin-top: 66px;
 
     &-title {
+      text-wrap: nowrap;
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -1px;
       color: colors.$black;
+
+      @media (max-width: 645px) {
+        font-size: 20px;
+      }
     }
 
     &-email {
@@ -61,6 +88,7 @@
     }
 
     &-description {
+      margin-left: 48px;
       max-width: 420px;
     }
 
@@ -70,6 +98,11 @@
       font-size: 20px;
       line-height: 140%;
       letter-spacing: -1px;
+
+      @media (max-width: 645px) {
+        font-size: 14px !important;
+        letter-spacing: -0.2px;
+      }
     }
   }
 }
