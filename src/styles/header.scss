@@ -1,0 +1,55 @@
+@use "_colors.scss";
+
+.header {
+  margin: 32px auto 46px;
+
+  &__logo {
+    width: 91px;
+    height: 32px;
+    object-fit: cover;
+  }
+
+  &__nav {
+    margin-top: 40px;
+    padding: 5px;
+    border-radius: 80px;
+    background-color: colors.$black;
+  }
+
+  &__item {
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    padding: 9px 16px;
+    border-radius: 48px;
+    color: colors.$grey;
+    background-color: transparent;
+    transition: .5s;
+
+    &.active {
+      color: colors.$black;
+      background-color: colors.$white;
+      & span {
+        color: colors.$white !important;
+        background-color: colors.$black !important;
+      }
+    }
+  }
+
+  &__notification {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-right: 6px;
+    border-radius: 50%;
+    color: colors.$black;
+    background-color: colors.$grey;
+  }
+}
