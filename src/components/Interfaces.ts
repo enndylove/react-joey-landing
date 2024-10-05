@@ -23,8 +23,14 @@ export interface IProjectContent {
 }
 
 export interface IProjectCard {
-    id: string,
+    id: number,
     imageName: string,
+    title: string,
+    description: string,
+}
+
+export interface IExpertiseCard {
+    id: number,
     title: string,
     description: string,
 }
