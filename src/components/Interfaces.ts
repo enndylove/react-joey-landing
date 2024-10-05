@@ -34,3 +34,7 @@ export interface IExpertiseCard {
     title: string,
     description: string,
 }
+
+export interface IXTrackText {
+    text: string,
+}

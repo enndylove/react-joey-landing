@@ -4,6 +4,7 @@ const Header:React.LazyExoticComponent<any> = lazy(() => import("./components/He
 const Welcome:React.LazyExoticComponent<any> = lazy(() => import("./components/Welcome/Welcome"));
 const Projects:React.LazyExoticComponent<any> = lazy(() => import("./components/Projects/Projects"));
 const Expertise:React.LazyExoticComponent<any> = lazy(() => import("./components/Expertise/Expertise"));
+const XTrack:React.LazyExoticComponent<any> = lazy(() => import("./components/XTrack/XTrack"))
 
 export default function Home(){
     return (
@@ -12,6 +13,7 @@ export default function Home(){
             <Welcome />
             <Projects />
             <Expertise />
+            <XTrack />
         </>
     );
 }

@@ -1,0 +1,15 @@
+@use "_colors.scss";
+
+.xtrack {
+  margin-top: 75px;
+  padding: 3rem 0;
+  background-color: colors.$black;
+
+  &__text {
+    text-wrap: nowrap;
+    font-size: 8.75em;
+    letter-spacing: -2px;
+    font-weight: 500;
+    color: colors.$white;
+  }
+}
