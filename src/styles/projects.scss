@@ -1,0 +1,111 @@
+@use '_colors.scss';
+
+.projects {
+  margin: 144px auto 0;
+
+  &__content {
+    @media (max-width: 505px) {
+      position: relative;
+    }
+
+    &-title {
+      font-size: 48px;
+      font-weight: 500;
+      letter-spacing: -1px;
+
+      color: colors.$black;
+
+
+      @media (max-width: 645px) {
+        font-size: 32px;
+      }
+    }
+
+    &-description {
+      max-width: 392px;
+      margin-top: 11px;
+      font-family: sans-serif !important;
+      font-size: 20px;
+      letter-spacing: -1px;
+      font-weight: 400;
+      line-height: 140%;
+      color: colors.$black;
+
+      @media (max-width: 645px) {
+        font-size: 16px;
+        letter-spacing: -0.2px;
+      }
+    }
+
+    &-btn {
+      font-size: 20px;
+      letter-spacing: -1px;
+      color: colors.$black;
+      transition: .5s;
+
+      & span {
+        margin-left: 8px;
+      }
+
+      &-icon {
+        width: 13px;
+        height: 15px;
+        object-fit: cover;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      @media (max-width: 505px) {
+        position: absolute;
+        top: 10px;
+        right: 0;
+      }
+    }
+  }
+
+  &__card {
+    max-width: 592px;
+
+    &s {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-row-gap: 32px;
+      grid-column-gap: 48px;
+      margin-top: 40px;
+
+      @media screen and (max-width: 550px) {
+        grid-template-columns: auto;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 20px;
+      margin-top: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    &-description {
+      font-family: sans-serif !important;
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 6px;
+      letter-spacing: -0.2px;
+    }
+
+
+    &-title, &-description {
+      color: colors.$black;
+    }
+  }
+}
