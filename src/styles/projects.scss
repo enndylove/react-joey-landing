@@ -1,7 +1,8 @@
 @use '_colors.scss';
 
 .projects {
-  margin: 144px auto 0;
+  margin: 9rem auto 0;
+
   &__content {
     @media (max-width: 505px) {
       position: relative;
