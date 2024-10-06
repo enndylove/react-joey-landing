@@ -1,4 +1,5 @@
-import React, {lazy, useEffect, useRef} from "react";
+import React, { lazy, useEffect, useRef } from "react";
+import Lenis from "lenis";
 import gsap from "gsap";
 
 // Lazy load components
@@ -11,22 +12,42 @@ const Testimonials = lazy(() => import("./components/Testimonials/Testimonials")
 const Footer = lazy(() => import("./components/Footer/Footer"));
 
 export default function Home(): React.ReactElement {
+    const contentRef = useRef<HTMLDivElement>(null);
     let d = useRef<HTMLDivElement>(null)
+
 
     useEffect(() => {
         gsap.fromTo(d.current, {opacity: 0}, {opacity: 1});
+
+        const lenisInstance = new Lenis({
+            duration: 1.2,
+            easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+            touchMultiplier: window.innerWidth <= 768 ? 3 : 2,
+        });
+
+        function onAnimationFrame(time: number) {
+            lenisInstance.raf(time);
+            requestAnimationFrame(onAnimationFrame);
+        }
+
+        requestAnimationFrame(onAnimationFrame);
+
+        return () => {
+            lenisInstance.destroy();
+        };
     }, []);
 
-
     return (
-        <div id="smooth-content" ref={d} className="smooth-content">
-            <Header/>
-            <Welcome/>
-            <Projects/>
-            <Expertise/>
-            <XTrack/>
-            <Testimonials/>
-            <Footer/>
+        <div ref={d}>
+            <div ref={contentRef}>
+                <Header/>
+                <Welcome/>
+                <Projects/>
+                <Expertise/>
+                <XTrack/>
+                <Testimonials/>
+                <Footer/>
+            </div>
         </div>
     );
 }
