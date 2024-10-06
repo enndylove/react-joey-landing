@@ -1,0 +1,105 @@
+@use 'colors.scss';
+
+.testimonials {
+  margin: 80px auto 0;
+
+  &__content{
+    & + & {
+      margin-top: 80px
+    }
+
+    @media screen and (max-width: 710px) {
+      flex-direction: column;
+      align-items: start !important;
+    }
+  };
+
+  &__block {
+    & + & {
+      margin-left: 25px;
+
+      @media screen and (max-width: 710px) {
+        margin-left: 0;
+      }
+    }
+
+    &.content {
+      max-width: 954px;
+
+      @media screen and (max-width: 1170px) {
+        max-width: 459px;
+      }
+    }
+  }
+
+  &__title {
+    //font-size: 64px;
+    font-size: 3.5em;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    color: colors.$black;
+
+    @media screen and (max-width: 1230px) {
+      font-size: 3.5em;
+    }
+
+    @media screen and (max-width: 1170px) {
+      font-size: 48px;
+    }
+
+    @media screen and (max-width: 426px){
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    margin-top: 2.5rem;
+    font-family: sans-serif !important;
+    //font-size: 48px;
+    font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 120%;
+
+    color: colors.$black;
+
+    @media screen and (max-width: 1230px) {
+      font-size: 2.5em;
+    }
+
+    @media screen and (max-width: 1170px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 426px) {
+      font-size: 14px;
+      margin-top: 32px;
+      letter-spacing: 0;
+    }
+  }
+
+  &__author {
+    margin-top: 13px;
+    font-weight: 500;
+  }
+
+  &__info {
+    margin-top: 9px;
+    font-family: sans-serif !important;
+    font-weight: 400;
+  }
+
+  &__author, &__info {
+    font-size: 18px;
+    letter-spacing: -.5px;
+
+    @media screen and (max-width: 1230px) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 426px) {
+      font-size: 14px;
+    }
+  }
+}

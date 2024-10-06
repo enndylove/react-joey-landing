@@ -38,3 +38,10 @@ export interface IExpertiseCard {
 export interface IXTrackText {
     text: string,
 }
+
+export interface ITestimonialsContent {
+    title: string,
+    description: string,
+    author: string,
+    info: string,
+}
