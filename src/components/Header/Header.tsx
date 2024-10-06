@@ -26,6 +26,8 @@ export default class Header extends Component<{}, HeaderState> {
 
     toggleBurgerMenu = () => {
         this.setState((prevState) => ({ burgerMenu: !prevState.burgerMenu }));
+        if(!this.state.burgerMenu) document.body.classList.add('overflow-hidden')
+            else document.body.classList.remove('overflow-hidden');
     };
 
     render() {
