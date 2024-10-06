@@ -45,3 +45,21 @@ export interface ITestimonialsContent {
     author: string,
     info: string,
 }
+
+export interface IFooterTalk {
+    title: string,
+    email: string,
+}
+
+export interface IFooterContent {
+    licence_year: string,
+    licence_madeBy: string,
+    dribble_link: string,
+    instagram_link: string,
+    linkedIn_link: string,
+}
+
+export interface IFooterItem {
+    link: string,
+    text: string,
+}
