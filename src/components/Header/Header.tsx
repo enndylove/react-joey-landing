@@ -46,8 +46,10 @@ export default class Header extends Component<{}, HeaderState> {
     };
 
     targetItem(link: string) {
-        this.setState({ activeItem: link });
+        this.setState({ activeItem: link, burgerMenu: false });
         gsap.to(window, { duration: 1.2, scrollTo: `${link}` });
+        if (!this.state.burgerMenu) document.body.classList.add('overflow-hidden')
+        else document.body.classList.remove('overflow-hidden');
     }
 
     toggleBurgerMenu = () => {
