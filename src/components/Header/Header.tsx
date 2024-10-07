@@ -1,10 +1,16 @@
 import './../../styles/header.scss';
+
 import { Component } from "react";
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/ScrollToPlugin"
+
 import Item from "./assets/Item";
 // @ts-ignore
 import logo from './../../images/main/logo.svg';
 // @ts-ignore
 import IconMenu from './../../images/icons/menu.svg';
+
+gsap.registerPlugin(ScrollToPlugin)
 
 interface HeaderState {
     activeItem: string;
@@ -22,6 +28,7 @@ export default class Header extends Component<{}, HeaderState> {
 
     targetItem(link: string) {
         this.setState({ activeItem: link });
+        gsap.to(window, { duration: 1.2, scrollTo: `${link}` });
     }
 
     toggleBurgerMenu = () => {
@@ -41,26 +48,22 @@ export default class Header extends Component<{}, HeaderState> {
                     <ul className="header__ul flex items-center">
                         <Item
                             onClick={() => this.targetItem("#home")}
-                            link="#home"
                             title="Home"
                             active={activeItem === "#home"}
                         />
                         <Item
                             onClick={() => this.targetItem("#projects")}
-                            link="#projects"
                             title="Projects"
                             notification={20}
                             active={activeItem === "#projects"}
                         />
                         <Item
                             onClick={() => this.targetItem("#about")}
-                            link="#about"
                             title="About"
                             active={activeItem === "#about"}
                         />
                         <Item
-                            onClick={() => this.targetItem("#contact")}
-                            link="#contact"
+                            onClick={() => this.targetItem("#downselection")}
                             title="Contact"
                             active={activeItem === "#contact"}
                         />

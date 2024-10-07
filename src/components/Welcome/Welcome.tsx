@@ -8,7 +8,7 @@ import About from "./assets/About";
 export default class Welcome extends Component<{}, {}>{
     render() {
         return (
-            <section className="welcome">
+            <section className="welcome" id="home">
                 <div className="wrapper m-auto">
                     <Content
                         title="Websites& Branding"

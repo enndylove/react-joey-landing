@@ -7,7 +7,7 @@ import '../../styles/projects.scss'
 export default class Projects extends Component<{}, {}>{
     render(): React.ReactElement {
         return (
-            <section className="wrapper projects">
+            <section className="wrapper projects" id="projects">
                 <Content
                     title="Projects"
                     description="As a seasoned creator of contemporary, user-friendly web designs and digital solutions, I aim to assist you in constructing the brand of your fantasies."

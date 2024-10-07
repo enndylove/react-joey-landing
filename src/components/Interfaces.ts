@@ -1,6 +1,5 @@
 export interface IHeaderItem {
     onClick?: () => void,
-    link: string,
     active?: boolean,
     notification?: number | 0,
     title: string,

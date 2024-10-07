@@ -6,7 +6,7 @@ import '../../styles/expertise.scss';
 export default class Expertise extends Component<{}, React.ReactElement>{
     render(): React.ReactElement {
         return (
-            <section className="expertise wrapper m-auto">
+            <section className="expertise wrapper m-auto" id="about">
                 <h2 className="projects__content-title">
                     Expertise
                 </h2>
