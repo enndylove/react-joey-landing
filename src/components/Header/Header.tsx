@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollToPlugin)
 interface HeaderState {
     activeItem: string;
     burgerMenu: boolean;
-    isScrolled: boolean; // Новий стан для стеження за скролом
+    isScrolled: boolean;
 }
 
 export default class Header extends Component<{}, HeaderState> {
@@ -24,7 +24,7 @@ export default class Header extends Component<{}, HeaderState> {
         this.state = {
             activeItem: "#home",
             burgerMenu: false,
-            isScrolled: false, // Початкове значення
+            isScrolled: false,
         };
     }
 
@@ -38,7 +38,7 @@ export default class Header extends Component<{}, HeaderState> {
 
     handleScroll = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const isScrolled = scrollTop > 60; // Можна змінити поріг на будь-який інший
+        const isScrolled = scrollTop > 60;
 
         if (isScrolled !== this.state.isScrolled) {
             this.setState({ isScrolled });
