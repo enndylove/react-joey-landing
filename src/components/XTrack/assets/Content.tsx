@@ -28,7 +28,11 @@ export default function Content({ text }: IXTrackText): React.ReactElement {
 
     return (
         <div className="xtrack__text__container" style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}>
-            <span ref={textRef} className="xtrack__text" style={{ display: 'inline-block' }}>
+            <span
+                ref={textRef}
+                className="xtrack__text wow animate__animated animate__fadeIn animate__repeat-3"
+                style={{ display: 'inline-block', animationDelay: "0.2s" }}
+            >
                 {text} {text}
             </span>
         </div>

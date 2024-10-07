@@ -7,7 +7,7 @@ export default class Expertise extends Component<{}, React.ReactElement>{
     render(): React.ReactElement {
         return (
             <section className="expertise wrapper m-auto" id="about">
-                <h2 className="projects__content-title">
+                <h2 className="projects__content-title wow animate__animated animate__fadeInUp">
                     Expertise
                 </h2>
 

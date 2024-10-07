@@ -16,11 +16,15 @@ export default function Content(props: IWelcomeContent): React.ReactElement {
 
     return (
         <div className="welcome__content relative w-full">
-            <h1 className="welcome__content-title">
+            <h1
+                className="welcome__content-title wow animate__animated animate__fadeIn"
+                style={{animationDelay: "0.5s"}}
+            >
                 {props.title}
             </h1>
             <div
-                className="welcome__content-btn absolute right-0 bottom-0 cursor-pointer flex items-center"
+                className="welcome__content-btn absolute right-0 bottom-0 cursor-pointer flex items-center wow animate__animated animate__fadeIn animate__repeat-2"
+                style={{animationDelay: "0.7s"}}
                 onClick={ScrollToDown}
             >
                 {props.buttonText}

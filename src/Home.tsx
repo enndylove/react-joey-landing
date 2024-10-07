@@ -2,6 +2,11 @@ import React, { lazy, useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 
+// @ts-ignore
+import WOW from "wowjs";
+
+import 'animate.css';
+
 // Lazy load components
 const Header = lazy(() => import("./components/Header/Header"));
 const Welcome = lazy(() => import("./components/Welcome/Welcome"));
@@ -15,6 +20,11 @@ export default function Home(): React.ReactElement {
     const contentRef = useRef<HTMLDivElement>(null);
     let d = useRef<HTMLDivElement>(null)
 
+    useEffect(() => {
+        new WOW.WOW({
+            live: false
+        }).init();
+    }, [])
 
     useEffect(() => {
         gsap.fromTo(d.current, {opacity: 0}, {opacity: 1});

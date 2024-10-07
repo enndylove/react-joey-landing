@@ -63,9 +63,16 @@ export default class Header extends Component<{}, HeaderState> {
 
         return (
             <header className="header flex flex-col items-center w-max">
-                <img className={`header__logo ${this.state.burgerMenu ? "active" : ""}`} src={logo} loading={"lazy"} alt="logo" />
+                <img
+                    className={`header__logo wow animate__animated animate__fadeIn ${this.state.burgerMenu ? "active" : ""}`}
+                    src={logo} loading={"lazy"} alt="logo"
+                    style={{animationDelay: "0.3s"}}
+                />
 
-                <nav className={`header__nav ${burgerMenu ? "active" : ""} ${isScrolled ? "isScrolled" : ""}`}>
+                <nav
+                    className={`header__nav wow animate__animated animate__fadeIn ${burgerMenu ? "active" : ""} ${isScrolled ? "isScrolled" : ""}`}
+                    style={{animationDelay: "0.4s"}}
+                >
                     <ul className="header__ul flex items-center">
                         <Item
                             onClick={() => this.targetItem("#home")}

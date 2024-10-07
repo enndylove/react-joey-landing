@@ -6,7 +6,10 @@ import Item from "./Item";
 export default function Content(props: IFooterContent): React.ReactElement {
     return (
         <div className="footer__content flex items-center justify-between w-full">
-            <span className="footer__content-licence">
+            <span
+                className="footer__content-licence wow animate__animated animate__fadeIn"
+                style={{animationDelay: "0.2s"}}
+            >
                 {`${props.licence_year} © — Made by ${props.licence_madeBy}`}
             </span>
 
