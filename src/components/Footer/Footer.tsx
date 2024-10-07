@@ -7,7 +7,7 @@ import '../../styles/footer.scss';
 export default class Footer extends React.Component<{}, React.ReactElement> {
     render() {
         return (
-            <footer className="footer wrapper">
+            <footer className="footer wrapper" id="downselection">
                 <Talk
                     title="Let’s talk!"
                     email="hello@joey.co"
