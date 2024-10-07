@@ -65,17 +65,25 @@
   }
 
   &__nav {
+    position: fixed;
+    bottom: calc(100% - 148px);
     margin-top: 40px;
     padding: 5px;
     border-radius: 80px;
     background-color: colors.$black;
     transition: .5s;
+    z-index: 30000;
+
+    @media screen and (min-width: 550px) {
+      &.isScrolled {
+        bottom: 2%;
+      }
+    }
 
     @media screen and (max-width: 550px) {
       opacity: 0;
 
       margin-top: 0;
-      position: fixed;
       overflow-y: auto;
       left: 0;
       top: 0;

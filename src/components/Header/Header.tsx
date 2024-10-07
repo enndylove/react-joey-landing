@@ -15,6 +15,7 @@ gsap.registerPlugin(ScrollToPlugin)
 interface HeaderState {
     activeItem: string;
     burgerMenu: boolean;
+    isScrolled: boolean; // Новий стан для стеження за скролом
 }
 
 export default class Header extends Component<{}, HeaderState> {
@@ -23,8 +24,26 @@ export default class Header extends Component<{}, HeaderState> {
         this.state = {
             activeItem: "#home",
             burgerMenu: false,
+            isScrolled: false, // Початкове значення
         };
     }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const isScrolled = scrollTop > 60; // Можна змінити поріг на будь-який інший
+
+        if (isScrolled !== this.state.isScrolled) {
+            this.setState({ isScrolled });
+        }
+    };
 
     targetItem(link: string) {
         this.setState({ activeItem: link });
@@ -33,18 +52,18 @@ export default class Header extends Component<{}, HeaderState> {
 
     toggleBurgerMenu = () => {
         this.setState((prevState) => ({ burgerMenu: !prevState.burgerMenu }));
-        if(!this.state.burgerMenu) document.body.classList.add('overflow-hidden')
-            else document.body.classList.remove('overflow-hidden');
+        if (!this.state.burgerMenu) document.body.classList.add('overflow-hidden')
+        else document.body.classList.remove('overflow-hidden');
     };
 
     render() {
-        const { activeItem, burgerMenu } = this.state;
+        const { activeItem, burgerMenu, isScrolled } = this.state;
 
         return (
             <header className="header flex flex-col items-center w-max">
                 <img className={`header__logo ${this.state.burgerMenu ? "active" : ""}`} src={logo} loading={"lazy"} alt="logo" />
 
-                <nav className={`header__nav ${burgerMenu ? "active" : ""}`}>
+                <nav className={`header__nav ${burgerMenu ? "active" : ""} ${isScrolled ? "isScrolled" : ""}`}>
                     <ul className="header__ul flex items-center">
                         <Item
                             onClick={() => this.targetItem("#home")}

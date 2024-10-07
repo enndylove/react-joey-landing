@@ -19,6 +19,10 @@
       letter-spacing: -2px;
       color: colors.$black;
 
+      @media screen and (min-width: 550px) {
+        margin-top: 86px;
+      }
+
       @media (max-width: 440px) {
         max-width: 300px;
         text-align: center;
