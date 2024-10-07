@@ -65,7 +65,7 @@ export default class Header extends Component<{}, HeaderState> {
                         <Item
                             onClick={() => this.targetItem("#downselection")}
                             title="Contact"
-                            active={activeItem === "#contact"}
+                            active={activeItem === "#downselection"}
                         />
                     </ul>
                 </nav>
