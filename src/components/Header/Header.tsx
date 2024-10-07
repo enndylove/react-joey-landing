@@ -43,6 +43,21 @@ export default class Header extends Component<{}, HeaderState> {
         if (isScrolled !== this.state.isScrolled) {
             this.setState({ isScrolled });
         }
+
+        const sections = [
+            { id: "#home", start: 0, end: 610 },
+            { id: "#projects", start: 611, end: 1626 },
+            { id: "#about", start: 1627, end: 2400 },
+            { id: "#downselection", start: 2401, end: Infinity }
+        ];
+
+        const activeSection = sections.find(
+            section => scrollTop >= section.start && scrollTop <= section.end
+        );
+
+        if (activeSection && activeSection.id !== this.state.activeItem) {
+            this.setState({ activeItem: activeSection.id });
+        }
     };
 
     targetItem(link: string) {
