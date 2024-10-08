@@ -5,6 +5,8 @@ import gsap from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin"
 
 import Item from "./assets/Item";
+import Theme from "./assets/Theme";
+
 // @ts-ignore
 import logo from './../../images/main/logo.svg';
 // @ts-ignore
@@ -78,18 +80,22 @@ export default class Header extends Component<{}, HeaderState> {
 
         return (
             <header className="header flex flex-col items-center w-max">
-                <img
-                    className={`header__logo wow animate__animated animate__fadeIn ${this.state.burgerMenu ? "active" : ""}`}
-                    src={logo} loading={"lazy"} alt="logo"
-                    style={{animationDelay: "0.3s"}}
-                />
+                <div className="flex items-center">
+                    <img
+                        className={`header__logo wow animate__animated animate__fadeIn ${this.state.burgerMenu ? "active" : ""}`}
+                        src={logo} loading={"lazy"} alt="logo"
+                        style={{animationDelay: "0.3s"}}
+                    />
+
+                    <Theme/>
+                </div>
 
                 <nav
                     className={`header__nav wow animate__animated animate__fadeIn ${burgerMenu ? "active" : ""} ${isScrolled ? "isScrolled" : ""}`}
                     style={{animationDelay: "0.4s"}}
                 >
                     <ul className="header__ul flex items-center">
-                        <Item
+                    <Item
                             onClick={() => this.targetItem("#home")}
                             title="Home"
                             active={activeItem === "#home"}

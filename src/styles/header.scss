@@ -166,4 +166,32 @@
     color: colors.$black;
     background-color: colors.$grey;
   }
+
+  &__theme {
+    padding: 11px 16px;
+    border-radius: 48px;
+    margin-left: 16px;
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: .5s;
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      transition: .5s;
+
+      &.dark {
+        filter: invert(100%);
+        transform: rotate(180deg);
+      }
+    }
+
+    &.dark {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
 }
