@@ -24,9 +24,6 @@ export default function Home(): React.ReactElement {
         new WOW.WOW({
             live: false
         }).init();
-
-
-        document.body.setAttribute("data-theme", "light");
     }, [])
 
     useEffect(() => {
