@@ -3,13 +3,23 @@
 .xtrack {
   margin-top: 75px;
   padding: 3rem 0;
-  background-color: colors.$black;
+  background-color: var(--black);
 
   &__text {
     text-wrap: nowrap;
     font-size: 8.75em;
     letter-spacing: -2px;
     font-weight: 500;
-    color: colors.$white;
+    color: var(--white);
+  }
+}
+
+html[data-theme="dark"] {
+  .xtrack {
+    background-color: #242424;
+
+    &__text {
+      color: var(--black);
+    }
   }
 }

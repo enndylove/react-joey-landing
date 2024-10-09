@@ -9,7 +9,7 @@
       font-weight: 500;
       letter-spacing: -2px;
 
-      color: colors.$black;
+      color: var(--black);
     }
 
     &-btn {
@@ -21,8 +21,8 @@
       font-weight: 500;
       letter-spacing: -1px;
       border-radius: 144px;
-      background-color: colors.$black;
-      color: colors.$white;
+      background-color: var(--black);
+      color: var(--white);
       transition: .5s;
 
       & span {
@@ -40,7 +40,7 @@
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.1);
-        color: colors.$black;
+        color: var(--black);
       }
 
       &:hover &-icon{
@@ -55,7 +55,7 @@
     font-weight: 400;
     letter-spacing: -0.5px;
 
-    color: colors.$black;
+    color: var(--black);
   }
 
   &__link {
@@ -91,6 +91,23 @@
     @media screen and (max-width: 500px) {
       margin-left: 0;
       margin-top: 24px;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .footer {
+    &__talk-btn {
+      background-color: #242424;
+      color: var(--black);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      &:hover .footer__talk-btn-icon{
+        filter: invert(0%);
+      }
     }
   }
 }

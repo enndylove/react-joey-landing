@@ -17,7 +17,8 @@
       font-weight: 500;
       line-height: 90%;
       letter-spacing: -2px;
-      color: colors.$black;
+      transition: 0s !important;
+      color: var(--black);
 
       @media screen and (min-width: 550px) {
         margin-top: 86px;
@@ -40,8 +41,8 @@
       letter-spacing: -1px;
 
       border-radius: 144px;
-      color: colors.$black;
-      background-color: colors.$grey-50;
+      color: var(--black);
+      background-color: var(--grey-50);
 
       padding: 32px;
       text-transform: uppercase;
@@ -67,8 +68,8 @@
       }
 
       &:hover {
-        background-color: colors.$black;
-        color: colors.$grey-50;
+        background-color: var(--black);
+        color: var(--grey-50);
       }
 
       &:hover &-icon {
@@ -85,7 +86,7 @@
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -1px;
-      color: colors.$black;
+      color: var(--black);
 
       @media (max-width: 645px) {
         font-size: 20px;
@@ -108,9 +109,25 @@
       line-height: 140%;
       letter-spacing: -1px;
 
+      color: var(--black);
+
       @media (max-width: 645px) {
         font-size: 14px !important;
         letter-spacing: -0.2px;
+      }
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  & .welcome {
+    &__content-btn {
+      &-icon {
+        filter: brightness(0) invert(1);
+      }
+
+      &:hover .welcome__content-btn-icon {
+        filter: brightness(0);
       }
     }
   }

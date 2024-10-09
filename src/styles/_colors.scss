@@ -1,4 +1,13 @@
-$black: #000000;
-$grey: #C4C4C4;
-$grey-50: #F9F9F9;
-$white: #FFFFFF;
+:root[data-theme="light"] {
+  --black: #000000;
+  --grey: #C4C4C4;
+  --grey-50: #F9F9F9;
+  --white: #FFFFFF;
+}
+
+:root[data-theme="dark"] {
+  --black: #FFFFFF;
+  --grey: #F9F9F9;
+  --grey-50: #141414;
+  --white: #000000;
+}

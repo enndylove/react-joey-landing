@@ -1,5 +1,5 @@
 @use "_colors.scss";
 
 body {
-  background-color: colors.$white;
+  background-color: var(--white);
 }

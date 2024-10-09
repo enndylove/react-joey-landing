@@ -14,7 +14,7 @@
     padding: 16px;
     margin: 0 0 20px;
     flex-direction: row !important;
-    background-color: colors.$white;
+    background-color: var(--white);
     align-items: center;
   }
 
@@ -26,14 +26,14 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: colors.$black;
+    background-color: var(--black);
 
     @media screen and (max-width: 550px) {
       display: flex;
     }
 
     &.active {
-      background-color: colors.$white;
+      background-color: var(--white);
     }
 
     &-icon {
@@ -70,7 +70,7 @@
     margin-top: 40px;
     padding: 5px;
     border-radius: 80px;
-    background-color: colors.$black;
+    background-color: var(--black);
     transition: .5s;
     z-index: 30000;
 
@@ -126,16 +126,16 @@
     letter-spacing: -0.5px;
     padding: 9px 16px;
     border-radius: 48px;
-    color: colors.$grey;
+    color: var(--grey);
     background-color: transparent;
     transition: .5s;
 
     &.active {
-      color: colors.$black;
-      background-color: colors.$white;
+      color: var(--black);
+      background-color: var(--white);
       & span {
-        color: colors.$white !important;
-        background-color: colors.$black !important;
+        color: var(--white) !important;
+        background-color: var(--black) !important;
       }
     }
 
@@ -145,12 +145,12 @@
 
       &.active {
         margin-left: 10px;
-        color: colors.$white !important;
+        color: var(--white) !important;
         background-color: transparent !important;
 
         & span {
-          color: colors.$black !important;
-          background-color: colors.$white !important;
+          color: var(--black) !important;
+          background-color: var(--white) !important;
         }
       }
     }
@@ -163,8 +163,8 @@
     font-weight: 700;
     margin-right: 6px;
     border-radius: 50%;
-    color: colors.$black;
-    background-color: colors.$grey;
+    color: var(--black);
+    background-color: var(--grey);
   }
 
   &__theme {
@@ -173,25 +173,92 @@
     margin-left: 16px;
     background-color: rgba(0, 0, 0, 0.15);
     transition: .5s;
+    z-index: 100002;
 
     &-icon {
       width: 24px;
       height: 24px;
       object-fit: cover;
-      transition: .5s;
-
-      &.dark {
-        filter: invert(100%);
-        transform: rotate(180deg);
-      }
-    }
-
-    &.dark {
-      background-color: rgba(255, 255, 255, 0.15);
     }
 
     &:hover {
       opacity: .7;
     }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.15);
+
+      & .header__theme-icon {
+        filter: invert(100%);
+      }
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  & .header {
+    &__logo {
+      filter: brightness(0) invert(1);
+
+      @media screen and (max-width: 550px) {
+        &.active {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+
+    &__nav {
+      background-color: var(--grey-50);
+
+      @media screen and (max-width: 550px) {
+        //background-color: var(--grey);
+      }
+    }
+
+    &__link {
+      color: #C4C4C4;
+      &.active {
+        color: var(--white);
+        background-color: var(--black);
+        & span {
+          color: var(--white) !important;
+          background-color: var(--black) !important;
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        opacity: .7;
+        &.active {
+          opacity: 1;
+          color: var(--black) !important;
+        }
+      }
+    }
+
+    &__notification {
+      color: var(--white);
+      background-color: #C4C4C4;
+    }
+
+    &__theme {
+      background-color: rgba(255, 255, 255, 0.15);
+
+      &-icon {
+        filter: invert(100%);
+        transform: rotate(180deg);
+      }
+    }
+
+    &__burger {
+      background-color: var(--black);
+      &-icon {
+        filter: grayscale(100%) brightness(0%);
+      }
+
+      &.active .header__burger-icon {
+        filter: grayscale(100%) brightness(0%);
+      }
+    }
+    //filter: brightness(0) invert(1);
   }
 }
