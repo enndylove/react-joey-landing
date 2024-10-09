@@ -5,6 +5,7 @@ import gsap from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin"
 
 import Item from "./assets/Item";
+import { ThemeContext, themes } from '../../theme/ThemeContext'
 import Theme from "./assets/Theme";
 
 // @ts-ignore
@@ -82,16 +83,25 @@ export default class Header extends Component<{}, HeaderState> {
             <header className="header flex flex-col items-center w-max">
                 <div className="flex items-center">
                     <img
-                        className={`header__logo wow animate__animated animate__fadeIn ${this.state.burgerMenu ? "active" : ""}`}
+                        className={`header__logo animate__animated animate__fadeIn ${this.state.burgerMenu ? "active" : ""}`}
                         src={logo} loading={"lazy"} alt="logo"
                         style={{animationDelay: "0.3s"}}
                     />
-
-                    <Theme/>
+                    <ThemeContext.Consumer>
+                        {({ theme, setTheme }: any) => (
+                            <Theme
+                                onClick={() => {
+                                    if (theme === themes.light) setTheme(themes.dark)
+                                    if (theme === themes.dark) setTheme(themes.light)
+                                }}
+                                burgerActive={burgerMenu}
+                            />
+                        )}
+                    </ThemeContext.Consumer>
                 </div>
 
                 <nav
-                    className={`header__nav wow animate__animated animate__fadeIn ${burgerMenu ? "active" : ""} ${isScrolled ? "isScrolled" : ""}`}
+                    className={`header__nav animate__animated animate__fadeIn ${burgerMenu ? "active" : ""} ${isScrolled ? "isScrolled" : ""}`}
                     style={{animationDelay: "0.4s"}}
                 >
                     <ul className="header__ul flex items-center">
