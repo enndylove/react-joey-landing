@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './Home';
 
+import ThemeProvider from "./theme/ThemeProvider";
+
 import './styles/_main.scss'
 
 const root = ReactDOM.createRoot(
@@ -10,6 +12,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Home />
+      <ThemeProvider>
+          <Home />
+      </ThemeProvider>
   </React.StrictMode>
 );
